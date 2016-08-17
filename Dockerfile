@@ -2,8 +2,8 @@ FROM alpine:latest
 
 MAINTAINER dianaesteves
 
-ENV YCSB_VERSION 0.10.0 \
-    YCSB /opt/ycsb-${YCSB_VERSION} \
+ENV YCSB_VERSION=0.10.0 \
+    YCSB=/opt/ycsb-${YCSB_VERSION} \
     PATH=${PATH}:/usr/bin
 
 RUN apk update && apk add --update curl python openjdk7-jre && \
