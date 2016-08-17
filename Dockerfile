@@ -2,15 +2,16 @@ FROM alpine:latest
 
 MAINTAINER dianaesteves
 
+ENV YCSB_VERSION 0.10.0 \
+    YCSB /opt/ycsb-$YCSB_VERSION
+    PATH=${PATH}:/usr/bin
+
 RUN apk update && apk add --update curl python openjdk7-jre && \
     mkdir /opt && cd /opt && \
-    curl -O --location  https://github.com/brianfrankcooper/YCSB/releases/download/0.10.0/ycsb-0.10.0.tar.gz && \
+    curl -O --location  https://github.com/brianfrankcooper/YCSB/releases/download/$YCSB_VERSION/ycsb-$YCSB_VERSION.tar.gz && \
     tar xfz *.tar.gz && \
     rm -rf *.tar.gz
     
-ENV YCSB=/opt/ycsb-0.10.0  \
-    PATH=${PATH}:/usr/bin
-
 WORKDIR ${YCSB} 
 
 ENTRYPOINT ["./bin/ycsb"] 
