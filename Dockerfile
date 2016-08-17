@@ -14,4 +14,4 @@ RUN apk update && apk add --update curl && \
 # EXPOSE 27017
 
 # CMD [".bin/ycsb","--help"] 
-CMD ["/bin/bash"] 
+CMD ["/bin/sh"] 
