@@ -5,6 +5,9 @@ MAINTAINER dianaesteves
 ENV YCSB_VERSION=0.10.0 \
     YCSB=/opt/ycsb-${YCSB_VERSION} \
     PATH=${PATH}:/usr/bin
+    
+# exposed port -- spells YCSB in a dial pad :)
+EXPOSE 9272 
 
 RUN apk update && apk add --update curl python openjdk7-jre && \
     mkdir /opt && cd /opt && \
