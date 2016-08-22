@@ -5,8 +5,10 @@ Dockerfile with Alpine latest (3.4) base and the [YCSB](https://github.com/brian
 ```docker pull nullstring/alpine-ycsb```
 
 # Docker Run
-* Default
+* Default (displays help)
   ```docker run  nullstring/alpine-ycsb```
+* Override the entrypoint to shell
+  ```docker run -it --entrypoint /bin/sh nullstring/alpine-ycsb```
 * With sample arguments for MongoDB
   * If you have a mongo container, get the IP addresss.
   Example with [mongo](https://hub.docker.com/_/mongo/) image:
@@ -43,13 +45,10 @@ Dockerfile with Alpine latest (3.4) base and the [YCSB](https://github.com/brian
   [INSERT], 99thPercentileLatency(us), 8223.0
   [INSERT], Return=OK, 1000
   ```
-  * You can verify the YCSB documents were written to the mandoduck container via:
+  * You can verify the YCSB documents were written to the mangoduck container via:
   ```
   docker exec mangoduck mongo ycsb --eval "db.usertable.count()"
   docker exec mangoduck mongo ycsb --eval "db.usertable.findOne().pretty()"
   ```
-* Override the entrypoint to shell
-  ```docker run -it --entrypoint /bin/sh nullstring/alpine-ycsb```
-
 # Todo
 * Testing, testing, testing
