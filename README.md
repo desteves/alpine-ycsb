@@ -45,10 +45,10 @@ Dockerfile with Alpine latest (3.4) base and the [YCSB](https://github.com/brian
   [INSERT], 99thPercentileLatency(us), 8223.0
   [INSERT], Return=OK, 1000
   ```
-  * You can verify the YCSB documents were written to the mangoduck container via:
+  * You can verify the YCSB documents were written to our mangoduck container via:
   ```
   docker exec mangoduck mongo ycsb --eval "db.usertable.count()"
-  docker exec mangoduck mongo ycsb --eval "db.usertable.findOne().pretty()"
+  docker exec mangoduck mongo ycsb --eval "db.usertable.findOne()"
   ```
 # Todo
 * Testing, testing, testing
