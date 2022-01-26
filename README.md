@@ -1,4 +1,6 @@
 # alpine-ycsb
+
+[![Git](https://app.soluble.cloud/api/v1/public/badges/118f4d9a-bbda-4f0c-9d79-38d4d97c53eb.svg?orgId=679096383598)](https://app.soluble.cloud/repos/details/github.com/desteves/alpine-ycsb?orgId=679096383598)  
 Dockerfile with Alpine latest (3.4) base and the [YCSB](https://github.com/brianfrankcooper/YCSB) 0.10.0 release.
 
 # Docker Pull Command
